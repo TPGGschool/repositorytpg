@@ -5,8 +5,7 @@ using UnityEngine;
 public class SphereMovemente : MonoBehaviour
 {
 
-    public int speed = 1;
-    int t = 0;
+    public int speed = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +16,6 @@ public class SphereMovemente : MonoBehaviour
     void Update()
     {
         float dt = Time.deltaTime;
-        t++;
-        transform.position = new Vector3(t * speed * dt, 0, 0) ;
+        transform.Translate (Vector3.right.normalized * speed * dt);
     }
 }
