@@ -5,7 +5,10 @@ using UnityEngine;
 public class ENamySpawn : MonoBehaviour
 {
 
-    float timer = 10;
+    float timer = 3;
+     public int min;
+     public int max;
+    public GameObject prefabEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,9 @@ public class ENamySpawn : MonoBehaviour
         timer = timer - dt;
         if (timer <= 0)
         {
-            float posY 
+            float posY = Random.Range(min, max);
+            Instantiate(prefabEnemy, new Vector3(transform.position.x, posY, 0), Quaternion.identity);
+            timer = 2;
         }
 
     }

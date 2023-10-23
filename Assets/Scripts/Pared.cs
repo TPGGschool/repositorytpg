@@ -9,6 +9,6 @@ public class Pared : MonoBehaviour
     {
         Destroy(collision.gameObject);
 
-        int Rnum = Random.Range(3, 5);
+       
     }
 }

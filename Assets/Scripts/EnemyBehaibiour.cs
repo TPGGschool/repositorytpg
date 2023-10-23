@@ -6,9 +6,12 @@ public class EnemyBehaibiour : MonoBehaviour
 {
 
     public float speed;
+    private PointsBehabiour scriptPointsBehaibiour;
    
     void Start()
     {
+
+        scriptPointsBehaibiour = FindObjectOfType<PointsBehabiour>();
         
     }
 
@@ -22,9 +25,12 @@ public class EnemyBehaibiour : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-           
 
+        if (collision.gameObject.tag == "Bullet")
+        {
             Destroy(collision.gameObject);
+            scriptPointsBehaibiour.AddPoints(3) ;
+        }
             Destroy(gameObject);
        
      
