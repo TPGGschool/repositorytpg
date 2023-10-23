@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBehaibiour : MonoBehaviour
 {
+
+    public float speed;
    
     void Start()
     {
@@ -13,15 +15,18 @@ public class EnemyBehaibiour : MonoBehaviour
     
     void Update()
     {
-        
+        float dt = Time.deltaTime;
+        transform.Translate(Vector3.left.normalized * speed * dt);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (CompareTag("Character"))
-        {
-           Destroy(collision.gameObject);
-        }
+           
+
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+       
+     
     }
 }
