@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class Pared : MonoBehaviour
 {
+    private Textlives scriptTextlives;
 
+    private void Start()
+    {
+        scriptTextlives = FindObjectOfType<Textlives>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            scriptTextlives.Loselives(1);
+        }
         Destroy(collision.gameObject);
-
-       
     }
+
+
 }

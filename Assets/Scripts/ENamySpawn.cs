@@ -5,14 +5,17 @@ using UnityEngine;
 public class ENamySpawn : MonoBehaviour
 {
 
-    float timer = 3;
+    double timer = 3;
+    double dif = 3;
      public int min;
      public int max;
     public GameObject prefabEnemy;
+
+    private Textlives scriptTextlives;
     // Start is called before the first frame update
     void Start()
     {
-
+        scriptTextlives = FindObjectOfType<Textlives>();
     }
 
     // Update is called once per frame
@@ -20,12 +23,16 @@ public class ENamySpawn : MonoBehaviour
     {
 
         float dt = Time.deltaTime;
-        timer = timer - dt;
-        if (timer <= 0)
+        timer -= dt;
+        if (timer <= 0 && scriptTextlives.vidas > 0) 
         {
             float posY = Random.Range(min, max);
             Instantiate(prefabEnemy, new Vector3(transform.position.x, posY, 0), Quaternion.identity);
-            timer = 2;
+            timer =  dif;
+            if (dif > 0.5)
+            {
+                dif -= 0.05;
+            }
         }
 
     }

@@ -3,30 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PointsBehabiour : MonoBehaviour
+public class Textlives : MonoBehaviour
 {
 
     private TMP_Text textComponent;
-    public int puntos = 10;
-    
+    public int vidas = 3;
+
     private void Start()
     {
 
         textComponent = GetComponent<TMP_Text>();
-        
+
     }
 
-   
+
     void Update()
     {
 
-        textComponent.text = "Score: " + puntos;
-        
+        textComponent.text = "Lives: " + vidas;
+
     }
 
-    public void AddPoints(int value)
+    public void Loselives(int value)
     {
-        puntos = puntos + value;
+
+        if (vidas > 0)
+        {
+            vidas = vidas - value;
+        }
     }
 
 

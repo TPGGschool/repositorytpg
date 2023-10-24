@@ -9,9 +9,13 @@ public class Spawn : MonoBehaviour
     public int speed = 7;
     private Vector3 spawnPoint = new Vector3(0, 7, 0);
 
+
+    private Textlives scriptTextlives;
+    private PointsBehabiour scrPointsBehaibiour;
     void Start()
     {
-        
+        scriptTextlives = FindObjectOfType<Textlives>();
+        scrPointsBehaibiour = FindObjectOfType<PointsBehabiour>();
     }
 
     
@@ -19,14 +23,21 @@ public class Spawn : MonoBehaviour
     {
         float dt = Time.deltaTime;
 
+        if (scriptTextlives.vidas <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Instantiate(objectToSpawn,spawnPoint, Quaternion.Euler(53,7,12));
         }
             
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && scrPointsBehaibiour.puntos >= 1)
         {
             Instantiate(sphere, transform.position, Quaternion.Euler(53, 7, 12));
+            scrPointsBehaibiour.AddPoints(-1);
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -51,10 +62,12 @@ public class Spawn : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 14;
+            speed = 15;
         } else
         {
             speed = 7;
         }
     }
+
+   
 }

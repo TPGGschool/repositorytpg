@@ -7,7 +7,8 @@ public class EnemyBehaibiour : MonoBehaviour
 
     public float speed;
     private PointsBehabiour scriptPointsBehaibiour;
-   
+    
+
     void Start()
     {
 
@@ -31,7 +32,7 @@ public class EnemyBehaibiour : MonoBehaviour
             Destroy(collision.gameObject);
             scriptPointsBehaibiour.AddPoints(3) ;
         }
-            Destroy(gameObject);
+        Destroy(gameObject);
        
      
     }
