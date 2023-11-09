@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Textlives : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class Textlives : MonoBehaviour
     {
 
         textComponent.text = "Lives: " + vidas;
-
+        gameover();
     }
 
     public void Loselives(int value)
@@ -33,5 +34,14 @@ public class Textlives : MonoBehaviour
         }
     }
 
+    public void gameover()
+    { 
+        if (vidas <= 0)
+        {
+        SceneManager.LoadScene(2);
+
+        }
+    
+    }
 
 }
