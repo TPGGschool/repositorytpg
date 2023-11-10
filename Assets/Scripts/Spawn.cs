@@ -31,12 +31,12 @@ public class Spawn : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Instantiate(objectToSpawn,spawnPoint, Quaternion.Euler(53,7,12));
+            Instantiate(objectToSpawn,spawnPoint, Quaternion.Euler(0,0,0));
         }
             
         if (Input.GetKeyDown(KeyCode.Space) && scrPointsBehaibiour.puntos >= 1)
         {
-            Instantiate(sphere, transform.position, Quaternion.Euler(53, 7, 12));
+            Instantiate(sphere, transform.position, Quaternion.Euler(0, 0, 0));
             scrPointsBehaibiour.AddPoints(-1);
         }
 
