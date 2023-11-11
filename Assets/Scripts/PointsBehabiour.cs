@@ -7,8 +7,8 @@ public class PointsBehabiour : MonoBehaviour
 {
 
     private TMP_Text textComponent;
-    public int puntos = 10;
-    
+     public int puntos = 10;
+
     private void Start()
     {
 
@@ -21,13 +21,23 @@ public class PointsBehabiour : MonoBehaviour
     {
 
         textComponent.text = "Score: " + puntos;
-        
+        savepointsdata();
+       
     }
 
     public void AddPoints(int value)
     {
         puntos = puntos + value;
     }
+
+    public string pointssv = "puntos";
+    public void savepointsdata()
+    {
+        PlayerPrefs.SetInt(pointssv, puntos);
+
+    }
+
+   
 
 
 }
