@@ -29,7 +29,7 @@ public class ENamySpawn : MonoBehaviour
             float posY = Random.Range(min, max);
             Instantiate(prefabEnemy, new Vector3(transform.position.x, posY, 0), Quaternion.identity);
             timer =  dif;
-            if (dif > 0.5)
+            if (dif > 0.1)
             {
                 dif -= 0.05;
             }

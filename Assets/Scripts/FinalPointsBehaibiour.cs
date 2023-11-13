@@ -8,7 +8,7 @@ public class FinalPointsBehaibiour : MonoBehaviour
 
     private TMP_Text textComponent;
     private PointsBehabiour scriptPointsBehabiour;
-    int puntos = 0;
+   
     
 
     private void Start()
@@ -23,16 +23,11 @@ public class FinalPointsBehaibiour : MonoBehaviour
     void Update()
     {
 
-        textComponent.text = "Score: " + puntos;
+        textComponent.text = "Score: " + scriptPointsBehabiour.puntos;
 
     }
 
-    public void exportpointsdata()
-    {
-        puntos = PlayerPrefs.GetInt(scriptPointsBehabiour.pointssv, 0);
-
-    }
-
+   
 
 
 }

@@ -6,13 +6,13 @@ using TMPro;
 public class PointsBehabiour : MonoBehaviour
 {
 
-    private TMP_Text textComponent;
+    public TMP_Text textComponent;
      public int puntos = 10;
 
     private void Start()
     {
-
-        textComponent = GetComponent<TMP_Text>();
+        DontDestroyOnLoad(gameObject);
+     
         
     }
 
@@ -21,7 +21,6 @@ public class PointsBehabiour : MonoBehaviour
     {
 
         textComponent.text = "Score: " + puntos;
-        savepointsdata();
        
     }
 
@@ -30,14 +29,7 @@ public class PointsBehabiour : MonoBehaviour
         puntos = puntos + value;
     }
 
-    public string pointssv = "puntos";
-    public void savepointsdata()
-    {
-        PlayerPrefs.SetInt(pointssv, puntos);
 
-    }
-
-   
 
 
 }
