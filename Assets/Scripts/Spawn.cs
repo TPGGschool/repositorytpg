@@ -29,10 +29,7 @@ public class Spawn : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Instantiate(objectToSpawn,spawnPoint, Quaternion.Euler(0,0,0));
-        }
+     
             
         if (Input.GetKeyDown(KeyCode.Space) && scrPointsBehaibiour.puntos >= 1)
         {
