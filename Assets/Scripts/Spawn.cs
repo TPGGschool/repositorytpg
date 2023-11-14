@@ -12,15 +12,22 @@ public class Spawn : MonoBehaviour
 
     private Textlives scriptTextlives;
     private PointsBehabiour scrPointsBehaibiour;
+    public Rigidbody rigidbodysquid;
+
+
+
     void Start()
     {
         scriptTextlives = FindObjectOfType<Textlives>();
         scrPointsBehaibiour = FindObjectOfType<PointsBehabiour>();
     }
 
+    private Vector3 direction = new Vector3(0, 0, 0);
     
     void Update()
     {
+        float speedy = rigidbodysquid.velocity.y;
+
         float dt = Time.deltaTime;
 
         if (scriptTextlives.vidas <= 0)
@@ -29,42 +36,61 @@ public class Spawn : MonoBehaviour
         }
 
 
-     
-            
-        if (Input.GetKeyDown(KeyCode.Space) && scrPointsBehaibiour.puntos >= 1)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && scrPointsBehaibiour.puntos >= 1)
         {
             Instantiate(sphere, transform.position, Quaternion.Euler(0, 0, 0));
             scrPointsBehaibiour.AddPoints(-1);
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.Translate(Vector3.up.normalized * speed * dt);
+           
+
+            if (speedy < 7f) 
+            { 
+             
+              rigidbodysquid.velocity = 15 * transform.up;
+
+            }
         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector3.down.normalized*speed * dt);
-        }
+       
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right.normalized * speed * dt);
+          
+            direction.x = 1 ;
+            direction.y = speedy / speed;
+            transform.Translate(direction.normalized * speed * dt);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left.normalized * speed * dt);
+            
+            direction.x = -1 ;
+            direction.y = speedy / speed;
+            transform.Translate(direction.normalized * speed * dt);
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 15;
+            speed = 13;
         } else
         {
             speed = 7;
         }
+
+        
+
     }
 
+
    
+
+
+
+
+
+
+
 }

@@ -27,7 +27,7 @@ public class ENamySpawn : MonoBehaviour
         if (timer <= 0 && scriptTextlives.vidas > 0) 
         {
             float posY = Random.Range(min, max);
-            Instantiate(prefabEnemy, new Vector3(transform.position.x, posY, 0), Quaternion.identity);
+            Instantiate(prefabEnemy, new Vector3(transform.position.x, posY, -1f), Quaternion.identity);
             timer =  dif;
             if (dif > 0.1)
             {

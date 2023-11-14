@@ -31,8 +31,8 @@ public class EnemyBehaibiour : MonoBehaviour
         {
             Destroy(collision.gameObject);
             scriptPointsBehaibiour.AddPoints(3) ;
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
        
      
     }

@@ -12,11 +12,18 @@ public class Pared : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Bullet")
         {
-            scriptTextlives.Loselives(1);
+
+            if (collision.gameObject.tag == "Enemy")
+            {
+
+                scriptTextlives.Loselives(1);
+            }
+            Destroy(collision.gameObject);
         }
-        Destroy(collision.gameObject);
+
+
     }
 
 
