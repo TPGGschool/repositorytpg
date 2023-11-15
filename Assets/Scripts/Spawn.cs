@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public GameObject objectToSpawn;
     public GameObject sphere;
     public int speed = 7;
-    private Vector3 spawnPoint = new Vector3(0, 7, 0);
 
 
     private Textlives scriptTextlives;
@@ -23,12 +21,12 @@ public class Spawn : MonoBehaviour
     }
 
     private Vector3 direction = new Vector3(0, 0, 0);
-    
+
     void Update()
     {
         float speedy = rigidbodysquid.velocity.y;
 
-        float dt = Time.deltaTime;
+
 
         if (scriptTextlives.vidas <= 0)
         {
@@ -44,50 +42,100 @@ public class Spawn : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-           
 
-            if (speedy < 7f) 
-            { 
-             
-              rigidbodysquid.velocity = 15 * transform.up;
+
+            if (speedy < 7f)
+            {
+
+                rigidbodysquid.velocity = 15 * transform.up;
 
             }
         }
 
+
        
+
+
+
+    }
+
+
+    private void FixedUpdate()
+    {
+
+        float dt = Time.deltaTime;
 
         if (Input.GetKey(KeyCode.D))
         {
-          
-            direction.x = 1 ;
-            direction.y = speedy / speed;
-            transform.Translate(direction.normalized * speed * dt);
+
+            
+
+            if (PlayerMovementLimit(-7.75f, "right"))
+            {
+                direction.x = 0;
+            }
+            else direction.x = 1;
+
+
+
+            transform.Translate(direction * speed * dt);
+
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            
-            direction.x = -1 ;
-            direction.y = speedy / speed;
-            transform.Translate(direction.normalized * speed * dt);
+            if (PlayerMovementLimit(-44f, "left"))
+            {
+                direction.x = 0;
+            }
+            else direction.x = -1;
+
+
+
+            transform.Translate(direction * speed * dt);
+
+
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = 13;
-        } else
+        }
+        else
         {
             speed = 7;
         }
 
-        
-
     }
 
+    bool PlayerMovementLimit(float limit, string limitside)
+    {
 
-   
+        if (limitside == "right")
+        {
+            if (transform.position.x >= limit)
+            {
+                return true;
+            }
+            else return false;
 
+            
+        }
+        else if (limitside == "left")
+        {
+            if (transform.position.x <= limit)
+            {
+                return true;
+            }
+            else return false;
 
+        } else
+        {
+            return false;
+        }
+
+        
+    }
 
 
 
