@@ -11,7 +11,8 @@ public class PointsBehabiour : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+
+        
      
         
     }
@@ -29,6 +30,31 @@ public class PointsBehabiour : MonoBehaviour
         puntos = puntos + value;
     }
 
+    public void ResetPoints(int value)
+    {
+        puntos = value;
+    }
+
+    
+    //-------------------------------- nodestroy
+
+    public static PointsBehabiour instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+
+    }
 
 
 
