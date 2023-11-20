@@ -7,14 +7,17 @@ public class PointsBehabiour : MonoBehaviour
 {
 
     public TMP_Text textComponent;
+    public SceneCounter scrSceneCounter;
+
      public int puntos = 10;
 
     private void Start()
     {
 
-        
-     
-        
+        puntos = 10;
+        scrSceneCounter = FindObjectOfType<SceneCounter>();
+
+
     }
 
    
@@ -22,6 +25,7 @@ public class PointsBehabiour : MonoBehaviour
     {
 
         textComponent.text = "Score: " + puntos;
+        scrSceneCounter.ChangePuntos(puntos);
        
     }
 
@@ -38,23 +42,8 @@ public class PointsBehabiour : MonoBehaviour
     
     //-------------------------------- nodestroy
 
-    public static PointsBehabiour instance;
-
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-
-        DontDestroyOnLoad(this.gameObject);
-
-    }
+  
+    
 
 
 

@@ -7,7 +7,7 @@ public class FinalPointsBehaibiour : MonoBehaviour
 {
 
     private TMP_Text textComponent;
-    private PointsBehabiour scriptPointsBehabiour;
+    private SceneCounter scrSceneCounter;
    
     
 
@@ -15,7 +15,7 @@ public class FinalPointsBehaibiour : MonoBehaviour
     {
 
         textComponent = GetComponent<TMP_Text>();
-        scriptPointsBehabiour = FindObjectOfType<PointsBehabiour>();
+        scrSceneCounter = FindObjectOfType<SceneCounter>();
 
     }
 
@@ -23,7 +23,7 @@ public class FinalPointsBehaibiour : MonoBehaviour
     void Update()
     {
 
-        textComponent.text = "Score: " + scriptPointsBehabiour.puntos;
+        textComponent.text = "Score: " + scrSceneCounter.puntos;
 
     }
 

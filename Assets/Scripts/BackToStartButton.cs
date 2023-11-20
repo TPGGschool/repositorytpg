@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BackToStartButton : MonoBehaviour
 {
+    private SceneCounter scriptSceneCounter;
+
+    private PointsBehabiour scriptPointsBehaibiour;
+
+    private void Start()
+    {
+
+        scriptSceneCounter = FindObjectOfType<SceneCounter>();
+        scriptPointsBehaibiour = FindObjectOfType<PointsBehabiour>();
+    }
     public void BotonJugar()
     {
-        SceneManager.LoadScene(0);
+        scriptSceneCounter.ChangeToScene(0);
     }
 }

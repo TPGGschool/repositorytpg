@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Button : MonoBehaviour
+public class RestartButton : MonoBehaviour
 {
 
     private PointsBehabiour scriptPointsBehaibiour;
@@ -18,6 +17,7 @@ public class Button : MonoBehaviour
     public void BotonJugar()
     {
         scriptSceneCounter.ChangeToScene(1);
+       
     }
 
 }

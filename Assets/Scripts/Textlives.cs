@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class Textlives : MonoBehaviour
 {
 
     private TMP_Text textComponent;
+    private SceneCounter scriptSceneCounter;
     public int vidas = 3;
 
     private void Start()
     {
 
         textComponent = GetComponent<TMP_Text>();
-
+        scriptSceneCounter = FindObjectOfType<SceneCounter>();
     }
 
 
@@ -38,7 +38,7 @@ public class Textlives : MonoBehaviour
     { 
         if (vidas <= 0)
         {
-        SceneManager.LoadScene(2);
+            scriptSceneCounter.ChangeToScene(2);
 
         }
     

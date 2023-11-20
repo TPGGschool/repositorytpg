@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1763197720}
+      - m_Target: {fileID: 1763197722}
         m_TargetAssemblyTypeName: Button, Assembly-CSharp
         m_MethodName: BotonJugar
         m_Mode: 1
@@ -974,7 +974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa06fbcb61389454d829fa97ab65cb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntos: 0
 --- !u!1 &1647024902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1763197721}
-  - component: {fileID: 1763197720}
+  - component: {fileID: 1763197722}
   m_Layer: 0
   m_Name: Scriptstartbutton
   m_TagString: Untagged
@@ -1305,18 +1304,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1763197720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763197719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db194fe77c4a7b5458f567061b8256b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1763197721
 Transform:
   m_ObjectHideFlags: 0
@@ -1332,3 +1319,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1763197722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763197719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db194fe77c4a7b5458f567061b8256b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
