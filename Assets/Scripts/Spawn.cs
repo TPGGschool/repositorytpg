@@ -45,7 +45,7 @@ public class Spawn : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && scrPointsBehaibiour.puntos >= 1  )
+        if (Input.GetKeyDown(KeyCode.Mouse0) && scrPointsBehaibiour.puntos >= 1 && !Input.GetKey(KeyCode.Mouse1))
         {
             if (topcol == "bla")
             {
@@ -67,7 +67,7 @@ public class Spawn : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.LeftShift) && scrPointsBehaibiour.puntos >= 1 && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Mouse1) && scrPointsBehaibiour.puntos >= 1 && Input.GetKeyDown(KeyCode.Space))
         {
             if (botcol == "bla")
             {
