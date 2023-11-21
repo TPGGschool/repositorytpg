@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public GameObject sphere;
+    public GameObject sphereBla;
+    public GameObject sphereAzu;
+    public GameObject sphereRos;
+    public GameObject stainBla, stainAzu, stainRos;
     public int speed = 7;
+
+    public SpriteRenderer spriteRenderer;
+    public Sprite blabla, blaazu, azubla, azuazu, blaros, rosbla, azuros, rosazu, rosros;
+    string topcol = "bla";
+    string botcol = "bla";
+    public string lastside = "top";
 
 
     private Textlives scriptTextlives;
@@ -18,6 +27,8 @@ public class Spawn : MonoBehaviour
     {
         scriptTextlives = FindObjectOfType<Textlives>();
         scrPointsBehaibiour = FindObjectOfType<PointsBehabiour>();
+
+       
     }
 
     private Vector3 direction = new Vector3(0, 0, 0);
@@ -34,10 +45,46 @@ public class Spawn : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && scrPointsBehaibiour.puntos >= 1)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && scrPointsBehaibiour.puntos >= 1  )
         {
-            Instantiate(sphere, transform.position, Quaternion.Euler(0, 0, 0));
+            if (topcol == "bla")
+            {
+
+              Instantiate(sphereBla, transform.position, Quaternion.Euler(0, 0, 0));
+            }
+            else if (topcol == "azu")
+            {
+                Instantiate(sphereAzu, transform.position, Quaternion.Euler(0, 0, 0));
+            }
+            else if (topcol == "ros")
+            {
+                Instantiate(sphereRos, transform.position, Quaternion.Euler(0, 0, 0));
+            }
+
+
+
             scrPointsBehaibiour.AddPoints(-1);
+        }
+
+
+        if (Input.GetKey(KeyCode.LeftShift) && scrPointsBehaibiour.puntos >= 1 && Input.GetKeyDown(KeyCode.Space))
+        {
+            if (botcol == "bla")
+            {
+
+                Instantiate(stainBla, transform.position, Quaternion.Euler(0, 0, 0));
+            }
+            else if (botcol == "azu")
+            {
+                Instantiate(stainAzu, transform.position, Quaternion.Euler(0, 0, 0));
+            }
+            else if (botcol == "ros")
+            {
+                Instantiate(stainRos, transform.position, Quaternion.Euler(0, 0, 0));
+            }
+
+            scrPointsBehaibiour.AddPoints(-1);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -52,8 +99,12 @@ public class Spawn : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.W))
+        { lastside = "top"; }
+        if (Input.GetKeyDown(KeyCode.S))
+        { lastside = "bot"; }
 
-       
+
 
 
 
@@ -68,7 +119,7 @@ public class Spawn : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
 
-            
+
 
             if (PlayerMovementLimit(-7.75f, "right"))
             {
@@ -119,7 +170,7 @@ public class Spawn : MonoBehaviour
             }
             else return false;
 
-            
+
         }
         else if (limitside == "left")
         {
@@ -129,12 +180,105 @@ public class Spawn : MonoBehaviour
             }
             else return false;
 
-        } else
+        }
+        else
         {
             return false;
         }
 
-        
+
+    }
+
+    public void ChangeCharSprite(string side, string color)
+    {
+        if (side == "top")
+        {
+
+            if (color == "bla")
+            {
+                topcol = "bla";
+            }
+
+            if (color == "azu")
+            {
+                topcol = "azu";
+            }
+
+            if (color == "ros")
+            {
+                topcol = "ros";
+            }
+
+        }
+
+        if (side == "bot")
+        {
+
+            if (color == "bla")
+            {
+                botcol = "bla";
+            }
+
+            if (color == "azu")
+            {
+                botcol = "azu";
+            }
+
+            if (color == "ros")
+            {
+                botcol = "ros";
+            }
+
+        }
+
+
+
+        if (topcol == "bla" && botcol == "bla")
+        {
+
+            spriteRenderer.sprite = blabla;
+        }
+        if (topcol == "bla" && botcol == "azu")
+        {
+
+            spriteRenderer.sprite = blaazu;
+        }
+        if (topcol == "azu" && botcol == "bla")
+        {
+
+            spriteRenderer.sprite = azubla;
+        }
+        if (topcol == "azu" && botcol == "azu")
+        {
+
+            spriteRenderer.sprite = azuazu;
+        }
+        if (topcol == "bla" && botcol == "ros")
+        {
+
+            spriteRenderer.sprite = blaros;
+        }
+        if (topcol == "azu" && botcol == "ros")
+        {
+
+            spriteRenderer.sprite = azuros;
+        }
+        if (topcol == "ros" && botcol == "bla")
+        {
+
+            spriteRenderer.sprite = rosbla;
+        }
+        if (topcol == "ros" && botcol == "azu")
+        {
+
+            spriteRenderer.sprite = rosazu;
+        }
+        if (topcol == "ros" && botcol == "ros")
+        {
+
+            spriteRenderer.sprite = rosros;
+        }
+
     }
 
 

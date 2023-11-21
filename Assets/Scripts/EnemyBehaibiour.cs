@@ -7,12 +7,14 @@ public class EnemyBehaibiour : MonoBehaviour
 
     public float speed;
     private PointsBehabiour scriptPointsBehaibiour;
+    private Spawn scrSpawn;
     
 
     void Start()
     {
 
         scriptPointsBehaibiour = FindObjectOfType<PointsBehabiour>();
+        scrSpawn = FindObjectOfType<Spawn>();
         
     }
 
@@ -33,7 +35,24 @@ public class EnemyBehaibiour : MonoBehaviour
             scriptPointsBehaibiour.AddPoints(3) ;
             Destroy(gameObject);
         }
-       
-     
+
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "TopTrigger")
+        {
+
+            scrSpawn.ChangeCharSprite("top", "bla");
+        }
+
+        if (other.tag == "BotTrigger")
+        {
+
+            scrSpawn.ChangeCharSprite("bot", "bla");
+        }
+        
     }
 }
