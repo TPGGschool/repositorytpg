@@ -13,9 +13,12 @@ public class ENamySpawn : MonoBehaviour
      public int maxe;
     public int minc;
     public int maxc;
-    public GameObject prefabEnemy;
+    public GameObject prefabEnemyShark;
+    public GameObject prefabEnemySword;
+    public GameObject prefabEnemyTurt;
     public GameObject prefabColor;
 
+    int randomenemy;
    
 
     private Textlives scriptTextlives;
@@ -34,7 +37,28 @@ public class ENamySpawn : MonoBehaviour
         if (timere <= 0 && scriptTextlives.vidas > 0) 
         {
             float posY = Random.Range(mine, maxe);
-            Instantiate(prefabEnemy, new Vector3(transform.position.x, posY, 0), Quaternion.identity);
+
+            randomenemy = Random.Range(0, 3);
+
+            if (randomenemy == 0)
+            {
+
+            Instantiate(prefabEnemyShark, new Vector3(transform.position.x, posY, 0), Quaternion.identity);
+            }
+            else if (randomenemy == 1)
+            {
+
+                Instantiate(prefabEnemySword, new Vector3(transform.position.x, posY, 0), Quaternion.identity);
+            }
+            else if (randomenemy == 2)
+            {
+
+                Instantiate(prefabEnemyTurt, new Vector3(transform.position.x, posY, 0), Quaternion.identity);
+            }
+
+
+
+
             timere =  dife;
             if (dife > 0.5)
             {

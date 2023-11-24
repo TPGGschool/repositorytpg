@@ -10,6 +10,7 @@ TagManager:
   - Limit
   - TopTrigger
   - BotTrigger
+  - Corrector
   layers:
   - Default
   - TransparentFX
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Bullet
     uniqueID: 881714101
+    locked: 0
+  - name: Corrector
+    uniqueID: 1087571941
     locked: 0

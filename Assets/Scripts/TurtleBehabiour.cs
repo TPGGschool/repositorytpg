@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaibiour : MonoBehaviour
+public class TurtleBehabiour : MonoBehaviour
 {
-
     public float speed;
     private PointsBehabiour scriptPointsBehaibiour;
     private Spawn scrSpawn;
+    public GameObject corrector;
 
+    float countercorrector = 1f;
     bool isitoncorrector = false;
 
     float timercorrector = 0.05f;
@@ -26,14 +27,25 @@ public class EnemyBehaibiour : MonoBehaviour
     {
         float dt = Time.deltaTime;
         transform.Translate(Vector3.left.normalized * speed * dt);
+        countercorrector -= dt;
+
+        if (countercorrector < 0)
+        {
+
+            Instantiate(corrector, new Vector3(transform.position.x +2,transform.position.y, 0), Quaternion.identity);
+
+            countercorrector = 0.12f;
+        }
 
         timercorrector -= dt;
         if (timercorrector < 0)
         {
             isitoncorrector = false;
         }
-    }
 
+
+
+    }
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -41,7 +53,7 @@ public class EnemyBehaibiour : MonoBehaviour
 
         if (collision.gameObject.tag == "Bullet")
         {
-           Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
 
             if (isitoncorrector == false)
             {
@@ -68,8 +80,10 @@ public class EnemyBehaibiour : MonoBehaviour
             scrSpawn.ChangeCharSprite("bot", "bla");
         }
 
+        
 
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Corrector")
@@ -77,6 +91,5 @@ public class EnemyBehaibiour : MonoBehaviour
             isitoncorrector = true;
             timercorrector = 0.05f;
         }
-
     }
 }

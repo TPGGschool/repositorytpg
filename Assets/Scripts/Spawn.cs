@@ -12,8 +12,8 @@ public class Spawn : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
     public Sprite blabla, blaazu, azubla, azuazu, blaros, rosbla, azuros, rosazu, rosros;
-    string topcol = "bla";
-    string botcol = "bla";
+    public string topcol = "bla";
+    public string botcol = "bla";
     public string lastside = "top";
 
 

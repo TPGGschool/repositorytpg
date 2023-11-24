@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112668796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.3, y: 25.6, z: -128.3}
+  m_LocalPosition: {x: -54.3, y: 25.93, z: -128.3}
   m_LocalScale: {x: 50, y: 3.34, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,7 +491,9 @@ MonoBehaviour:
   maxe: 11
   minc: -44
   maxc: -7
-  prefabEnemy: {fileID: 3006006353810662245, guid: 2d02e56b3c3724441afaa62be2202651, type: 3}
+  prefabEnemyShark: {fileID: 3875782875977039849, guid: 887063a6cb663a949b1bc8dc8bd737f9, type: 3}
+  prefabEnemySword: {fileID: 1947471313897049401, guid: 7a2d5eb6b5d74a84585ad46f39a4b4d1, type: 3}
+  prefabEnemyTurt: {fileID: 5681190146413239292, guid: 61f442cae64a2fa4ea1649d9e57e48d7, type: 3}
   prefabColor: {fileID: 4373482821523070722, guid: 3fd42b7cabecf3547aae9831b11c9dbe, type: 3}
 --- !u!4 &930406379
 Transform:
@@ -687,8 +689,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041909909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.120010376, y: -2.8, z: 0}
-  m_LocalScale: {x: 5.2, y: 1.84, z: 1}
+  m_LocalPosition: {x: 0.49, y: -3, z: 0}
+  m_LocalScale: {x: 6.92, y: 3.19, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1274530806}
@@ -833,15 +835,17 @@ MonoBehaviour:
   stainRos: {fileID: 474571326824108926, guid: 0167d7d3830714e429d7286c42bfac51, type: 3}
   speed: 7
   spriteRenderer: {fileID: 1274530808}
-  blabla: {fileID: 21300000, guid: 2c08001a8b4de7a48acc0c9208856a38, type: 3}
-  blaazu: {fileID: 21300000, guid: 48f4a1d8b038cf640963b4f85ff46de3, type: 3}
-  azubla: {fileID: 21300000, guid: f81085ea81273694b87d24bf8fcab458, type: 3}
-  azuazu: {fileID: 21300000, guid: 648f220cf8bb6e34ba95063066c9cab5, type: 3}
-  blaros: {fileID: 21300000, guid: a5059c0a5b7c6244a9a2002c9517c42c, type: 3}
-  rosbla: {fileID: 21300000, guid: e6393f0f01b03244181cbfcfef1f10fc, type: 3}
-  azuros: {fileID: 21300000, guid: fca2fec7cadcab04ca01ba91f5a6e80b, type: 3}
-  rosazu: {fileID: 21300000, guid: 47ee994da01b47c4ab371c63baf81a21, type: 3}
-  rosros: {fileID: 21300000, guid: 34ba295feb4ad3742aacc30ac20add27, type: 3}
+  blabla: {fileID: 21300000, guid: 3103e86b7d5d6354db6eea3ea6c9ce15, type: 3}
+  blaazu: {fileID: 21300000, guid: fc7ccac90dd9b0648a0ea085bb241d60, type: 3}
+  azubla: {fileID: 21300000, guid: e1e7b3fa3b355f44aaf1a5d522669b0f, type: 3}
+  azuazu: {fileID: 21300000, guid: 457c06f7becf14d4797c22164250f595, type: 3}
+  blaros: {fileID: 21300000, guid: 0c741680fdd04c8479fd0e7c65048f79, type: 3}
+  rosbla: {fileID: 21300000, guid: f0836b05129c07c4ca15731c329eb72b, type: 3}
+  azuros: {fileID: 21300000, guid: d476e2a4a1091eb4bad2b15378987599, type: 3}
+  rosazu: {fileID: 21300000, guid: d49b0345acc4cd8409c09bbbe8992ac7, type: 3}
+  rosros: {fileID: 21300000, guid: e82f16f44646eac4798b42c20c0635b5, type: 3}
+  topcol: bla
+  botcol: bla
   lastside: top
   rigidbodysquid: {fileID: 1274530807}
 --- !u!65 &1274530803
@@ -866,7 +870,7 @@ Transform:
   m_GameObject: {fileID: 1274530801}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -40.56, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1554261644}
@@ -931,7 +935,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c08001a8b4de7a48acc0c9208856a38, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3103e86b7d5d6354db6eea3ea6c9ce15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1285,7 +1289,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 8a1a6aaa4b6414448ae01abe5cb348cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1860,7 +1864,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099339181}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -79.8, y: 22.09253, z: -140.07463}
+  m_LocalPosition: {x: -83.2, y: 22.09253, z: -140.07463}
   m_LocalScale: {x: 1, y: 76.41, z: 68.86}
   m_ConstrainProportionsScale: 0
   m_Children: []

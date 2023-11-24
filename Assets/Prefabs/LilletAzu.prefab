@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  lilbullet: {fileID: 4150110910963308513, guid: b127bcc5def8bc442bcf979973f6aa71, type: 3}
 --- !u!54 &3286784059721647551
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -118,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 95aada323da9f094bba885715cb48348, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f24a9cb1c73a8ae47b0bbe101bdc2fb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
