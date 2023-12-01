@@ -8,6 +8,8 @@ public class ColorBehabiour : MonoBehaviour
     private Spawn scrSpawn;
     public Sprite azuColor;
     public Sprite rosColor;
+    public Sprite curColor;
+    private Textlives scrTextLives;
     private ENamySpawn scrENamySpawn;
     int randomcol = 0;
     string colType = "azu";
@@ -17,8 +19,10 @@ public class ColorBehabiour : MonoBehaviour
     void Start()
     {
         scrENamySpawn = FindObjectOfType<ENamySpawn>();
+        scrSpawn = FindObjectOfType<Spawn>();
+        scrTextLives = FindObjectOfType<Textlives>();
 
-        randomcol = Random.Range(0, 2);
+        randomcol = Random.Range(0, 3);
 
         if (randomcol == 0)
         {
@@ -28,6 +32,10 @@ public class ColorBehabiour : MonoBehaviour
         else if (randomcol == 1)
         {
             colType = "ros";
+        }
+        else if (randomcol == 2)
+        {
+            colType = "cur";
         }
 
 
@@ -45,6 +53,11 @@ public class ColorBehabiour : MonoBehaviour
             spriteRenderer.sprite = rosColor;
 
         }
+        else if (colType == "cur")
+        {
+            spriteRenderer.sprite = curColor;
+
+        }
     }
 
 
@@ -58,8 +71,14 @@ public class ColorBehabiour : MonoBehaviour
         if (other.tag == "TopTrigger" || other.tag == "BotTrigger")
         {
 
-
-            scrSpawn.ChangeCharSprite(scrSpawn.lastside, colType);
+            if (colType == "cur")
+            {
+                scrTextLives.Loselives(-1);
+            }
+            else
+            {
+                scrSpawn.ChangeCharSprite(scrSpawn.lastside, colType);
+            }
 
 
 

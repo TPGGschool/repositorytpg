@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  lilbullet: {fileID: 4150110910963308513, guid: b127bcc5def8bc442bcf979973f6aa71, type: 3}
 --- !u!54 &3286784059721647551
 Rigidbody:
   m_ObjectHideFlags: 0

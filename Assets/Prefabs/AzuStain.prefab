@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474571326824108923}
+  - component: {fileID: -5880559715631195067}
   - component: {fileID: 474571326824108920}
+  - component: {fileID: -6645649686901152337}
   - component: {fileID: 474571326824108921}
   m_Layer: 6
   m_Name: AzuStain
@@ -33,6 +35,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5880559715631195067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474571326824108926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ba0303ae3f25642b507818cb51ff1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 15
 --- !u!135 &474571326824108920
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -46,6 +61,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0.11, y: -0.72, z: 0}
+--- !u!114 &-6645649686901152337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474571326824108926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648d92003c4ff6141a2b0298ad78336f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lilbullet: {fileID: 4150110910963308513, guid: b127bcc5def8bc442bcf979973f6aa71, type: 3}
 --- !u!212 &474571326824108921
 SpriteRenderer:
   m_ObjectHideFlags: 0

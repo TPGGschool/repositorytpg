@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1671238147818300841}
   - component: {fileID: 1938754984989816265}
   - component: {fileID: 713683525959395731}
+  - component: {fileID: 3312070141512785274}
   - component: {fileID: 3286784059721647551}
   - component: {fileID: -5298458580295503006}
   m_Layer: 6
@@ -61,7 +62,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  lilbullet: {fileID: 4150110910963308513, guid: b127bcc5def8bc442bcf979973f6aa71, type: 3}
+--- !u!114 &3312070141512785274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999512569246653837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4562126824130624a908626b18733e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SharkPink: {fileID: 8247232955125648456, guid: 588ba0965c4d33e4aa9113986d012674, type: 3}
+  SwordPink: {fileID: 7095561417727896267, guid: 19beb96e2464ed14ebaf9d10c6d187fd, type: 3}
+  TurtPink: {fileID: 3508557106713977025, guid: e0ce1b4a9a1e7ed40bc63cd23ec293a6, type: 3}
 --- !u!54 &3286784059721647551
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 474571326824108923}
   - component: {fileID: 474571326824108920}
   - component: {fileID: 474571326824108921}
+  - component: {fileID: 2155490972098612103}
   m_Layer: 6
   m_Name: BlaStain
   m_TagString: Bullet
@@ -98,3 +99,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2155490972098612103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474571326824108926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ba0303ae3f25642b507818cb51ff1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 15

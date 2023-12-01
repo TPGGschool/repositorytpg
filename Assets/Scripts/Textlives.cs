@@ -15,6 +15,7 @@ public class Textlives : MonoBehaviour
 
         textComponent = GetComponent<TMP_Text>();
         scriptSceneCounter = FindObjectOfType<SceneCounter>();
+
     }
 
 

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4373482821523070720}
   - component: {fileID: 4373482821523070721}
   - component: {fileID: 4373482821523070733}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Color Blue
-  m_TagString: Untagged
+  m_TagString: Power
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,3 +131,4 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4373482821523070720}
   azuColor: {fileID: 21300000, guid: 2f475c6771791c54589500f7d6791528, type: 3}
   rosColor: {fileID: 21300000, guid: 182510e9bff4cb44ca6f11e01f780b07, type: 3}
+  curColor: {fileID: 21300000, guid: b69cad77fbe7b7243ae153979d539139, type: 3}

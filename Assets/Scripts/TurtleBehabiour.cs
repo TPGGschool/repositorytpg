@@ -10,7 +10,7 @@ public class TurtleBehabiour : MonoBehaviour
     public GameObject corrector;
 
     float countercorrector = 1f;
-    bool isitoncorrector = false;
+    public bool isitoncorrector = false;
 
     float timercorrector = 0.05f;
 
@@ -51,6 +51,7 @@ public class TurtleBehabiour : MonoBehaviour
 
 
 
+
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(collision.gameObject);
@@ -62,7 +63,6 @@ public class TurtleBehabiour : MonoBehaviour
 
             }
         }
-
 
     }
 

@@ -14,6 +14,7 @@ public class Spawn : MonoBehaviour
     public Sprite blabla, blaazu, azubla, azuazu, blaros, rosbla, azuros, rosazu, rosros;
     public string topcol = "bla";
     public string botcol = "bla";
+
     public string lastside = "top";
 
 
@@ -45,7 +46,7 @@ public class Spawn : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && scrPointsBehaibiour.puntos >= 1 && !Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && scrPointsBehaibiour.puntos >= 1 )
         {
             if (topcol == "bla")
             {

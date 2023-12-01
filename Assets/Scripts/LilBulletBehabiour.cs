@@ -7,15 +7,14 @@ public class LilBulletBehabiour : MonoBehaviour
 
     public Rigidbody rigidbodybullet;
     int randomup = 0;
-    int randomright = 0;
+    int randomforward = 0;
     bool just1 = true;
 
     // Start is called before the first frame update
     void Start()
     {
         randomup = Random.Range(1, 10);
-        randomright = Random.Range(-3, 4);
-        rigidbodybullet.velocity = randomright * transform.right;
+        randomforward = Random.Range(-7, 7);
     }
 
     // Update is called once per frame
@@ -24,6 +23,7 @@ public class LilBulletBehabiour : MonoBehaviour
         if (just1)
         {
         rigidbodybullet.velocity = randomup * transform.up;
+        rigidbodybullet.velocity += randomforward * transform.right;
             just1 = false;
         }
         

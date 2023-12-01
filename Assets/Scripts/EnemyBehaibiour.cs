@@ -8,8 +8,9 @@ public class EnemyBehaibiour : MonoBehaviour
     public float speed;
     private PointsBehabiour scriptPointsBehaibiour;
     private Spawn scrSpawn;
+    private SphereMovemente scrSphereMovemente;
 
-    bool isitoncorrector = false;
+    public bool isitoncorrector = false;
 
     float timercorrector = 0.05f;
 
@@ -18,12 +19,14 @@ public class EnemyBehaibiour : MonoBehaviour
 
         scriptPointsBehaibiour = FindObjectOfType<PointsBehabiour>();
         scrSpawn = FindObjectOfType<Spawn>();
+        scrSphereMovemente = FindObjectOfType<SphereMovemente>();
 
     }
 
 
     void Update()
     {
+        
         float dt = Time.deltaTime;
         transform.Translate(Vector3.left.normalized * speed * dt);
 
@@ -38,16 +41,18 @@ public class EnemyBehaibiour : MonoBehaviour
     {
 
 
+       
 
         if (collision.gameObject.tag == "Bullet")
         {
-           Destroy(collision.gameObject);
+           
+            Destroy(collision.gameObject);
 
             if (isitoncorrector == false)
             {
                 scriptPointsBehaibiour.AddPoints(3);
+                
                 Destroy(gameObject);
-
             }
         }
 
@@ -69,6 +74,7 @@ public class EnemyBehaibiour : MonoBehaviour
         }
 
 
+
     }
     private void OnTriggerStay(Collider other)
     {
@@ -79,4 +85,6 @@ public class EnemyBehaibiour : MonoBehaviour
         }
 
     }
+
+   
 }
